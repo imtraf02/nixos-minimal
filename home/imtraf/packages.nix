@@ -55,5 +55,7 @@
     wl-clipboard
 
     google-chrome
+    app2unit
+    biome
   ];
 }

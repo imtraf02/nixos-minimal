@@ -11,7 +11,9 @@
     ./git.nix
     ./niri
     ./noctalia
-    # ./zen
+    ./zen
+    ./zed
+    ./ghostty
   ];
 
   home = {

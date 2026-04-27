@@ -7,8 +7,6 @@
     enable = true;
 
     settings = {
-      settingsVersion = 57;
-
       bar = {
         barType = "framed";
         position = "top";
@@ -273,7 +271,7 @@
 
       wallpaper = {
         enabled = true;
-        overviewEnabled = false;
+        overviewEnabled = true;
         directory = "/home/imtraf/Pictures/Wallpapers";
         monitorDirectories = [];
         enableMultiMonitorDirectories = false;
@@ -559,17 +557,6 @@
         enforceMinimum = true;
         enableDdcSupport = false;
         backlightDeviceMappings = [];
-      };
-
-      colorSchemes = {
-        useWallpaperColors = true;
-        predefinedScheme = "Noctalia (default)";
-        darkMode = false;
-        schedulingMode = "off";
-        manualSunrise = "06:30";
-        manualSunset = "18:30";
-        generationMethod = "tonal-spot";
-        monitorForColors = "";
       };
 
       templates = {

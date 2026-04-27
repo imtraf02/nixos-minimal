@@ -16,6 +16,7 @@
 
     # Aliases tiện lợi
     shellAliases = {
+      cls = "clear";
       ls = "eza --icons";
       ll = "eza -la --icons --git";
       lt = "eza --tree --icons -L 2";
@@ -64,6 +65,4 @@
     enable = true;
     nix-direnv.enable = true; # Tích hợp tốt với Nix flakes
   };
-
-
 }
