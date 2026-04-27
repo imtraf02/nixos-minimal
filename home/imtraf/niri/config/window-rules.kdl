@@ -1,0 +1,27 @@
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^(zen-beta|dev\.zed\.Zed|code)$"#
+    default-column-width {
+        proportion 1.0
+    }
+}
+
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+    draw-border-with-background false
+}
+
+layer-rule {
+    match namespace="^quickshell:overview"
+    place-within-backdrop true
+}

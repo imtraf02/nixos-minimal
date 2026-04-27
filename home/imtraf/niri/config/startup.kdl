@@ -1,0 +1,6 @@
+spawn-at-startup "noctalia-shell"
+spawn-at-startup "app2unit" "--" "zen-beta"
+
+hotkey-overlay {
+    skip-at-startup
+}
