@@ -9,7 +9,7 @@
 
     settings = {
       user.name = "imtraf";
-      user.email = "your@email.com";
+      user.email = "imtrafdev@gmail.com";
 
       init.defaultBranch = "main";
       pull.rebase = true;
