@@ -7,7 +7,7 @@
 }: {
   home.packages = with pkgs; [
     # --- Antigravity ---
-    inputs.antigravity-nix.packages.${pkgs.system}.default
+    inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # --- Terminal tools ---
     ghostty
@@ -21,6 +21,7 @@
     fd # Thay thế find
     bat # Thay thế cat (syntax highlight)
     eza # Thay thế ls (icon, git status)
+    yazi # File manager
 
     # --- Disk & process ---
     duf # Better df (disk usage)

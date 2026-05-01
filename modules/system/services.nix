@@ -2,8 +2,14 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
+  imports = [inputs.lingSDDM.nixosModules.default];
+  programs.lingSDDM = {
+    enable = true;
+    theme = "default";
+  };
   services = {
     # D-Bus — message bus cho desktop
     dbus = {
@@ -13,7 +19,7 @@
 
     # Greetd + tuigreet — display manager nhẹ, Wayland-native
     greetd = {
-      enable = true;
+      enable = false; # turnoff
       settings.default_session = {
         command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
         user = "greeter";

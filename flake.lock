@@ -133,6 +133,26 @@
         "type": "github"
       }
     },
+    "lingSDDM": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1777651865,
+        "narHash": "sha256-jKGzprHW1ntUqoqtIjJNWnU8FwudWINJZqQ/RF4Dhfc=",
+        "owner": "imtraf02",
+        "repo": "ling-sddm",
+        "rev": "0343e7804d5c6b42c84cc08e86727932ae0c931f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "imtraf02",
+        "repo": "ling-sddm",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1776877367,
@@ -214,6 +234,7 @@
         "antigravity-nix": "antigravity-nix",
         "fcitx5-lotus": "fcitx5-lotus",
         "home-manager": "home-manager",
+        "lingSDDM": "lingSDDM",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "noctalia": "noctalia",
