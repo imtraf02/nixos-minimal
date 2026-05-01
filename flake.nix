@@ -16,12 +16,22 @@
     };
 
     zen-browser = {
-       url = "github:0xc000022070/zen-browser-flake";
-       inputs = {
-         nixpkgs.follows = "nixpkgs";
-         home-manager.follows = "home-manager";
-       };
-     };
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
+
+    fcitx5-lotus = {
+      url = "github:LotusInputMethod/fcitx5-lotus";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    antigravity-nix = {
+      url = "github:jacopone/antigravity-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

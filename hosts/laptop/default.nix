@@ -16,6 +16,7 @@
     ../../modules/system/services.nix
     ../../modules/system/power.nix
     ../../modules/system/users.nix
+    ../../modules/system/nix-ld.nix
 
     # Desktop modules
     ../../modules/desktop/niri.nix
@@ -25,6 +26,8 @@
   ];
 
   virtualisation.docker.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "nixos-laptop";
 

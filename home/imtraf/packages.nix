@@ -2,60 +2,71 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   home.packages = with pkgs; [
+    # --- Antigravity ---
+    inputs.antigravity-nix.packages.${pkgs.system}.default
+
     # --- Terminal tools ---
-    grc
-    tmux
-    zellij # Terminal multiplexer hiện đại (thay tmux, tùy thích)
+    ghostty
+    zellij # Terminal multiplexer
     fzf # Fuzzy finder
-    zoxide # Smart cd (z thay cho cd)
+    zoxide # Smart cd
+    grc # Generic colouriser
+
+    # --- File & search ---
     ripgrep # rg — tìm kiếm nhanh
     fd # Thay thế find
     bat # Thay thế cat (syntax highlight)
     eza # Thay thế ls (icon, git status)
-    delta # Better git diff
+
+    # --- Disk & process ---
     duf # Better df (disk usage)
     dust # Better du
     procs # Better ps
     bottom # Better top (btm)
-    fastfetch # System info đẹp
-    ghostty
+
+    # --- Git ---
+    delta # Better git diff
+
+    # --- System info & debug ---
+    fastfetch
+    file
+    lsof
+    strace
+    ltrace
 
     # --- Archiving ---
     unzip
     p7zip
     unrar
 
-    # --- System ---
-    file
-    lsof
-    strace
-    ltrace
-
-    # --- Editor ---
-
     # --- Media ---
     mpv # Video player
     imv # Image viewer nhẹ cho Wayland
     spotify # (cần allowUnfree = true)
 
-    # --- Development ---
+    # --- Development: languages & runtimes ---
     gcc
     gnumake
     python3
-    nodejs_22
+    nodejs_24
+    bun
+    pnpm
     rustup
-    alejandra
+
+    # --- Development: editors & tools ---
     zed-editor
+    alejandra # Nix formatter
+    biome
+    gemini-cli
 
     # --- Misc ---
     xdg-utils
     wl-clipboard
-
     google-chrome
     app2unit
-    biome
   ];
 }

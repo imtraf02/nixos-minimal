@@ -24,6 +24,8 @@
       enable32Bit = true;
       extraPackages = with pkgs; [
         intel-media-driver
+        intel-compute-runtime # OpenCL for Intel Gen12+ (Tiger Lake)
+        vpl-gpu-rt
         libva-vdpau-driver
         libvdpau-va-gl
       ];

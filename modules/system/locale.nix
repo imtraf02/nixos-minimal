@@ -2,8 +2,13 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
+  imports = [
+    inputs.fcitx5-lotus.nixosModules.fcitx5-lotus
+  ];
+
   time.timeZone = "Asia/Ho_Chi_Minh";
 
   i18n = {
@@ -28,12 +33,11 @@
     type = "fcitx5";
     fcitx5.addons = with pkgs; [
       fcitx5-gtk
-      kdePackages.fcitx5-unikey
     ];
   };
 
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
+  services.fcitx5-lotus = {
+    enable = true;
+    user = "imtraf";
   };
 }

@@ -1,10 +1,10 @@
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+T hotkey-overlay-title="Open a terminal: ghostty"      { spawn "app2unit" "--" "ghostty"; }
-    Mod+C hotkey-overlay-title="Open an code editor: zeditor"  { spawn "app2unit" "--" "zeditor"; }
-    Mod+W hotkey-overlay-title="Open a web browser: zen"       { spawn "app2unit" "--" "zen-beta"; }
-    Mod+E hotkey-overlay-title="Open a file manager: nautilus" { spawn "app2unit" "--" "nautilus"; }
+    Mod+T hotkey-overlay-title="Open a terminal"      { spawn "app2unit" "--" "$TERMINAL"; }
+    Mod+C hotkey-overlay-title="Open an code editor"  { spawn "app2unit" "--" "$EDITOR"; }
+    Mod+W hotkey-overlay-title="Open a web browser"       { spawn "app2unit" "--" "$BROWSER"; }
+    Mod+E hotkey-overlay-title="Open a file manager" { spawn "app2unit" "--" "$FILE_MANAGER"; }
 
     // quickshell
     Mod+Return      hotkey-overlay-title="Toggle launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }

@@ -14,6 +14,7 @@
     ./zen
     ./zed
     ./ghostty
+    ./obs-studio
   ];
 
   home = {
@@ -26,7 +27,14 @@
     EDITOR = "zeditor";
     TERMINAL = "ghostty";
     TERM = "ghostty";
+    BROWSER = "zen-beta";
+    NPM_CONFIG_PREFIX = "$HOME/.npm-global";
+    XDG_DATA_HOME = "$HOME/.local/share";
   };
+
+  home.sessionPath = [
+    "$HOME/.npm-global/bin"
+  ];
 
   programs.home-manager.enable = true;
 

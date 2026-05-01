@@ -36,7 +36,7 @@
     # Khởi tạo zoxide trong fish
     interactiveShellInit = ''
       zoxide init fish | source
-      set -gx fish_greeting ""   # Tắt lời chào mặc định của fish
+      set -gx fish_greeting ""
     '';
   };
 

@@ -24,19 +24,16 @@
     };
   };
 
-  # GNOME Keyring — lưu mật khẩu / SSH key
   services.gnome.gnome-keyring.enable = true;
 
-  # Mở khóa keyring khi đăng nhập qua greetd
   security.pam.services.greetd.enableGnomeKeyring = true;
 
-  # RealtimeKit — ưu tiên realtime cho PipeWire (âm thanh ít lag)
   security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [
     polkit_gnome
     gnome-keyring
-    libsecret # Secret Service API
-    seahorse # GUI quản lý keyring / GPG
+    libsecret
+    seahorse
   ];
 }
