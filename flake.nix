@@ -33,7 +33,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lingSDDM = {
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ling-sddm = {
       url = "github:imtraf02/ling-sddm";
       inputs.nixpkgs.follows = "nixpkgs";
     };

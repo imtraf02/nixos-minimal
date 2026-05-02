@@ -5,11 +5,18 @@
   inputs,
   ...
 }: {
-  imports = [inputs.lingSDDM.nixosModules.default];
-  programs.lingSDDM = {
-    enable = true;
-    theme = "default";
+  imports = [inputs.ling-sddm.nixosModules.default];
+  services.displayManager.sddm.lingSDDM.enable = true;
+  services.displayManager.sddm.lingSDDM.profileIcons = {
+    imtraf = ../../assets/avatar/imtraf.jpg;
   };
+  services.libinput.enable = true;
+
+  environment.systemPackages = [
+    pkgs.bibata-cursors
+    pkgs.libsForQt5.qt5.qtgraphicaleffects
+  ];
+
   services = {
     # D-Bus — message bus cho desktop
     dbus = {
@@ -18,11 +25,23 @@
     };
 
     # Greetd + tuigreet — display manager nhẹ, Wayland-native
-    greetd = {
-      enable = false; # turnoff
-      settings.default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
-        user = "greeter";
+    # greetd = {
+    #   enable = true;
+    #   settings.default_session = {
+    #     command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
+    #     user = "greeter";
+    #   };
+    # };
+
+    displayManager.defaultSession = "niri";
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      settings = {
+        Theme = {
+          CursorTheme = "Bibata-Modern-Ice";
+          CursorSize = 24;
+        };
       };
     };
 
