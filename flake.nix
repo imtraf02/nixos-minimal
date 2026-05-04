@@ -33,11 +33,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    silentSDDM = {
-      url = "github:uiriansan/SilentSDDM";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     ling-sddm = {
       url = "github:imtraf02/ling-sddm";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -82,7 +77,10 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = {inherit inputs;};
-            users.imtraf = import ./home/imtraf/default.nix;
+            users = {
+              imtraf = import ./home/imtraf/default.nix;
+              underdel = import ./home/underdel/default.nix;
+            };
           };
         }
       ];

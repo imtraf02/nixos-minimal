@@ -140,11 +140,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777681234,
-        "narHash": "sha256-yJuRYzeJR6dBVo8w1KFr5EwfXBl5Y3azjbF/SM1Vavg=",
+        "lastModified": 1777906553,
+        "narHash": "sha256-IQ6472Y6FUA65/rUjjJnXdrKUdJndfPyNnMZjEzZ/tw=",
         "owner": "imtraf02",
         "repo": "ling-sddm",
-        "rev": "2f2e030691f9c3f0e4730a6d61319459ed2839d7",
+        "rev": "16d052e168d2313acf77ad442fa94fef0c3f6398",
         "type": "github"
       },
       "original": {
@@ -238,28 +238,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "noctalia": "noctalia",
-        "silentSDDM": "silentSDDM",
         "zen-browser": "zen-browser"
-      }
-    },
-    "silentSDDM": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1775652648,
-        "narHash": "sha256-mLE7i9r9qenayJ8adWm22SbqUwLuopvRhyoizuZTtyo=",
-        "owner": "uiriansan",
-        "repo": "SilentSDDM",
-        "rev": "a0fb8a48de772c0340dd6639b331ebf6ec2eb554",
-        "type": "github"
-      },
-      "original": {
-        "owner": "uiriansan",
-        "repo": "SilentSDDM",
-        "type": "github"
       }
     },
     "snowfall-lib": {
