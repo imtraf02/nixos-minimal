@@ -15,6 +15,7 @@
     ./zed
     ./ghostty
     ./obs-studio
+    ./lingfm
   ];
 
   home = {

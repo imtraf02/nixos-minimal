@@ -23,7 +23,7 @@
         enable = true;
         wayland.enable = true;
 
-        lingSDDM = {
+        ling-sddm = {
           enable = true;
           profileIcons = {
             imtraf = ../../assets/avatar/imtraf.jpg;
@@ -49,7 +49,6 @@
 
   environment.systemPackages = with pkgs; [
     bibata-cursors
-    libsForQt5.qt5.qtgraphicaleffects
   ];
 
   nix = {

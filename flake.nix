@@ -37,6 +37,10 @@
       url = "github:imtraf02/ling-sddm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lingfm = {
+      url = "github:imtraf02/lingfm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -76,6 +80,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
+            backupFileExtension = "hm-backup";
             extraSpecialArgs = {inherit inputs;};
             users = {
               imtraf = import ./home/imtraf/default.nix;

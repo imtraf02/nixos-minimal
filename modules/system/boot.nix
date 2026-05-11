@@ -23,6 +23,8 @@
       "mitigations=auto"
       "quiet"
       "splash"
+      "loglevel=3"
+      "udev.log_level=3"
     ];
 
     tmp.useTmpfs = true;

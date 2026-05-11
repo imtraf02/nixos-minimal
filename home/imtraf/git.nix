@@ -8,7 +8,7 @@
     enable = true;
 
     settings = {
-      user.name = "imtraf";
+      user.name = "imtraf02";
       user.email = "imtrafdev@gmail.com";
 
       init.defaultBranch = "main";
@@ -17,12 +17,6 @@
       core.editor = "hx";
       diff.colorMoved = "default";
       merge.conflictstyle = "diff3";
-
-      aliases = {
-        ci = "commit";
-        co = "checkout";
-        s = "status";
-      };
     };
 
     ignores = [
