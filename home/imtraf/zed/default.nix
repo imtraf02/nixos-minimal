@@ -7,7 +7,6 @@
     enable = true;
 
     extensions = [
-      "biome"
       "color-highlight"
       "emmet"
       "material-icon-theme"
@@ -121,64 +120,6 @@
       };
 
       languages = {
-        CSS = {
-          formatter.language_server.name = "biome";
-          code_actions_on_format = {
-            "source.fixAll.biome" = true;
-            "source.organizeImports.biome" = true;
-          };
-        };
-
-        GraphQL = {
-          formatter.language_server.name = "biome";
-          code_actions_on_format = {
-            "source.fixAll.biome" = true;
-            "source.organizeImports.biome" = true;
-          };
-        };
-
-        JSON = {
-          formatter.language_server.name = "biome";
-          code_actions_on_format = {
-            "source.fixAll.biome" = true;
-            "source.organizeImports.biome" = true;
-          };
-        };
-
-        JSONC = {
-          formatter.language_server.name = "biome";
-          code_actions_on_format = {
-            "source.fixAll.biome" = true;
-            "source.organizeImports.biome" = true;
-          };
-        };
-
-        JavaScript = {
-          formatter.language_server.name = "biome";
-          code_actions_on_format = {
-            "source.fixAll.biome" = true;
-            "source.organizeImports.biome" = true;
-          };
-        };
-
-        TypeScript = {
-          inlay_hints.enabled = false;
-          formatter.language_server.name = "biome";
-          code_actions_on_format = {
-            "source.fixAll.biome" = true;
-            "source.organizeImports.biome" = true;
-          };
-        };
-
-        TSX = {
-          inlay_hints.enabled = false;
-          formatter.language_server.name = "biome";
-          code_actions_on_format = {
-            "source.fixAll.biome" = true;
-            "source.organizeImports.biome" = true;
-          };
-        };
-
         Nix = {
           format_on_save = "on";
           language_servers = ["nixd" "!nil"];
@@ -195,8 +136,6 @@
       };
 
       lsp = {
-        biome.settings.require_config_file = false;
-
         nixd = {
           initialization_options.formatting.command = [
             "alejandra"

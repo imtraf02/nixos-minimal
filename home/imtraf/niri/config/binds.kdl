@@ -4,21 +4,22 @@ binds {
     Mod+T hotkey-overlay-title="Open a terminal" { spawn "app2unit" "--" "ghostty"; }
     Mod+C hotkey-overlay-title="Open an code editor" { spawn "app2unit" "--" "zeditor"; }
     Mod+W hotkey-overlay-title="Open a web browser" { spawn "app2unit" "--" "zen-beta"; }
-    Mod+E hotkey-overlay-title="Open a file manager" { spawn "app2unit" "--" "lingfm"; }
+    Mod+E hotkey-overlay-title="Open a file manager" { spawn "app2unit" "--" "ghostty -e yazi"; }
 
-    // quickshell
-    Mod+Return      hotkey-overlay-title="Toggle launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-    Mod+S           hotkey-overlay-title="Toggle session" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
-    Mod+B           hotkey-overlay-title="Toggle bar" { spawn "noctalia-shell" "ipc" "call" "bar" "toggle"; }
-    Mod+Alt+L       hotkey-overlay-title="Lock the Screen" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    // Core Noctalia binds
+    Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+S { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Apostrophe { spawn-sh "noctalia msg settings-toggle"; }
+    Mod+B { spawn-sh "noctalia msg bar-toggle"; }
+    Mod+Alt+L { spawn-sh "noctalia msg screen-lock"; }
+    Mod+Shift+S { spawn-sh "noctalia msg panel-toggle session"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute        allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "volume" "muteInput"; }
-
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+    // Audio & Brightness
+    XF86AudioRaiseVolume { spawn-sh "noctalia msg volume-up"; }
+    XF86AudioLowerVolume { spawn-sh "noctalia msg volume-down"; }
+    XF86AudioMute { spawn-sh "noctalia msg volume-mute"; }
+    XF86MonBrightnessUp { spawn-sh "noctalia msg brightness-up"; }
+    XF86MonBrightnessDown { spawn-sh "noctalia msg brightness-down"; }
 
     Mod+O repeat=false { toggle-overview; }
 

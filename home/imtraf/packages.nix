@@ -7,13 +7,18 @@
 }: {
   home.packages = with pkgs; [
     # --- Antigravity ---
-    inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.antigravity-nix.packages.${pkgs.system}.default
+    inputs.codex-cli-nix.packages.${pkgs.system}.default
+    opencode
+    telegram-desktop
+
     # --- Terminal tools ---
     ghostty
     zellij # Terminal multiplexer
     fzf # Fuzzy finder
     zoxide # Smart cd
     grc # Generic colouriser
+    termius
     # --- File & search ---
     ripgrep # rg — tìm kiếm nhanh
     fd # Thay thế find
@@ -49,18 +54,20 @@
     bun
     pnpm
     rustup
+    go
+
     # --- Development: editors & tools ---
     zed-editor
     alejandra # Nix formatter
-    biome
     gemini-cli
     # --- Misc ---
     xdg-utils
     wl-clipboard
-    google-chrome
     app2unit
     # --- Media & video editing ---
     davinci-resolve
+
+    nautilus
   ];
 
   xdg.desktopEntries.davinci-resolve = {

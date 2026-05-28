@@ -11,7 +11,7 @@
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia-shell/v5";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -29,7 +29,7 @@
     };
 
     antigravity-nix = {
-      url = "github:jacopone/antigravity-nix";
+      url = "github:jacopone/antigravity-nix/v2-consolidation";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -37,10 +37,7 @@
       url = "github:imtraf02/ling-sddm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lingfm = {
-      url = "github:imtraf02/lingfm";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    codex-cli-nix.url = "github:sadjow/codex-cli-nix";
   };
 
   outputs = {
