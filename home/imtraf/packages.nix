@@ -11,7 +11,7 @@
     inputs.codex-cli-nix.packages.${pkgs.system}.default
     opencode
     telegram-desktop
-
+    code-cursor
     # --- Terminal tools ---
     ghostty
     zellij # Terminal multiplexer
@@ -68,6 +68,7 @@
     davinci-resolve
 
     nautilus
+    google-chrome
   ];
 
   xdg.desktopEntries.davinci-resolve = {
