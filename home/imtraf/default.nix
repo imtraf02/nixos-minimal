@@ -10,7 +10,6 @@
     ./shell.nix
     ./git.nix
     ./niri
-    # ./noctalia
     ./gnil
     ./zen
     ./zed

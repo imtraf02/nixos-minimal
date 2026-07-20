@@ -6,6 +6,7 @@
 }: {
   networking = {
     networkmanager.enable = true;
+    modemmanager.enable = false;
 
     nftables.enable = true;
 
@@ -17,16 +18,10 @@
     };
   };
 
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   environment.systemPackages = with pkgs; [
-    networkmanagerapplet
     iproute2
-    wirelesstools
     nmap
   ];
 }

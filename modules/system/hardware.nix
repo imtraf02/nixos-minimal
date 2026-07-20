@@ -6,7 +6,6 @@
 }: {
   hardware = {
     enableRedistributableFirmware = true;
-    enableAllFirmware = true;
 
     cpu.intel.updateMicrocode = true;
 
@@ -21,18 +20,13 @@
 
     graphics = {
       enable = true;
-      enable32Bit = true;
       extraPackages = with pkgs; [
         intel-media-driver
         intel-compute-runtime # OpenCL for Intel Gen12+ (Tiger Lake)
         vpl-gpu-rt
-        libva-vdpau-driver
-        libvdpau-va-gl
       ];
     };
   };
-
-  services.blueman.enable = true;
 
   services.udisks2.enable = true;
 

@@ -54,18 +54,34 @@
   nix = {
     settings = {
       experimental-features = ["nix-command" "flakes"];
-      auto-optimise-store = true;
+      auto-optimise-store = false;
       warn-dirty = false;
     };
 
     gc = {
       automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
+      dates = "Sun 14:00";
+      options = "--delete-older-than 14d";
+      randomizedDelaySec = "1h";
+      persistent = true;
+    };
+
+    optimise = {
+      automatic = true;
+      dates = "Sun 16:00";
+      randomizedDelaySec = "1h";
+      persistent = true;
+    };
+  };
+
+  systemd.services.nix-gc = {
+    unitConfig.ConditionACPower = true;
+    serviceConfig = {
+      Nice = 19;
+      CPUSchedulingPolicy = "idle";
+      IOSchedulingClass = "idle";
     };
   };
 
   systemd.settings.Manager.DefaultTimeoutStopSec = "10s";
-
-  nixpkgs.config.allowUnfree = true;
 }

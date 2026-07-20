@@ -22,11 +22,7 @@
     ../../modules/desktop/niri.nix
     ../../modules/desktop/audio.nix
     ../../modules/desktop/fonts.nix
-    ../../modules/desktop/portal.nix
   ];
-
-  virtualisation.docker.enable = true;
-  virtualisation.vmware.host.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 

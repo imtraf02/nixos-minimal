@@ -3,15 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -30,11 +24,10 @@
 
     fcitx5-lotus = {
       url = "github:LotusInputMethod/fcitx5-lotus";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     antigravity-nix = {
-      url = "github:jacopone/antigravity-nix/v2.0.0-6324554176528384";
+      url = "github:jacopone/antigravity-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -42,39 +35,37 @@
       url = "github:imtraf02/ling-sddm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    codex-cli-nix.url = "github:sadjow/codex-cli-nix";
+
+    codex-cli-nix = {
+      url = "github:sadjow/codex-cli-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
-    self,
     nixpkgs,
-    nixpkgs-unstable,
     home-manager,
     ...
   } @ inputs: let
     system = "x86_64-linux";
-
-    overlays = [
-      (final: prev: {
-        unstable = nixpkgs-unstable.legacyPackages.${system};
-      })
-    ];
-
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-      overlays = overlays;
-    };
+    pkgs = nixpkgs.legacyPackages.${system};
   in {
+    formatter.${system} = pkgs.alejandra;
+
+    devShells.${system}.default = pkgs.mkShell {
+      packages = with pkgs; [
+        alejandra
+        deadnix
+        nixd
+        statix
+      ];
+    };
+
     nixosConfigurations.nixos-laptop = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = {
-        inherit inputs;
-      };
+      specialArgs = {inherit inputs;};
 
       modules = [
-        {nixpkgs = {inherit (pkgs) config overlays;};}
-
         ./hosts/laptop/default.nix
 
         home-manager.nixosModules.home-manager

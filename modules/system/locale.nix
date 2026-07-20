@@ -40,6 +40,6 @@
 
   services.fcitx5-lotus = {
     enable = true;
-    user = "imtraf";
+    users = ["imtraf"];
   };
 }

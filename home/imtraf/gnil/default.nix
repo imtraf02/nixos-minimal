@@ -5,5 +5,6 @@
 
   programs.gnil = {
     enable = true;
+    systemd.enable = true;
   };
 }

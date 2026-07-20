@@ -1,24 +1,21 @@
 {
-  config,
   pkgs,
-  lib,
   inputs,
   ...
-}: {
+}: let
+  system = pkgs.stdenv.hostPlatform.system;
+in {
   home.packages = with pkgs; [
     # --- Antigravity ---
-    inputs.antigravity-nix.packages.${pkgs.system}.default
-    inputs.codex-cli-nix.packages.${pkgs.system}.default
+    inputs.antigravity-nix.packages.${system}.google-antigravity-ide
+    inputs.codex-cli-nix.packages.${system}.default
     opencode
     telegram-desktop
-    code-cursor
     # --- Terminal tools ---
-    ghostty
     zellij # Terminal multiplexer
     fzf # Fuzzy finder
     zoxide # Smart cd
     grc # Generic colouriser
-    termius
     # --- File & search ---
     ripgrep # rg — tìm kiếm nhanh
     fd # Thay thế find
@@ -46,19 +43,7 @@
     mpv # Video player
     imv # Image viewer nhẹ cho Wayland
     spotify # (cần allowUnfree = true)
-    # --- Development: languages & runtimes ---
-    gcc
-    gnumake
-    python3
-    nodejs_24
-    bun
-    pnpm
-    rustup
-    go
-
-    # --- Development: editors & tools ---
-    zed-editor
-    alejandra # Nix formatter
+    # --- Development tools ---
     gemini-cli
     # --- Misc ---
     xdg-utils
@@ -66,9 +51,6 @@
     app2unit
     # --- Media & video editing ---
     davinci-resolve
-
-    nautilus
-    google-chrome
   ];
 
   xdg.desktopEntries.davinci-resolve = {

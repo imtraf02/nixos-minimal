@@ -1,15 +1,12 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
-  security.sudo = {
-    enable = true;
-    wheelNeedsPassword = true;
+{pkgs, ...}: {
+  security = {
+    sudo = {
+      enable = true;
+      wheelNeedsPassword = true;
+    };
+    polkit.enable = true;
+    pam.services.greetd.enableGnomeKeyring = true;
   };
-
-  security.polkit.enable = true;
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
     description = "polkit-gnome-authentication-agent-1";
@@ -25,10 +22,6 @@
   };
 
   services.gnome.gnome-keyring.enable = true;
-
-  security.pam.services.greetd.enableGnomeKeyring = true;
-
-  security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [
     polkit_gnome
