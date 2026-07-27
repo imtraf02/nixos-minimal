@@ -157,16 +157,36 @@
         ]
       },
       "locked": {
-        "lastModified": 1784441482,
-        "narHash": "sha256-RoiFIby6XM6rrrBz8ivT2oRdrN5LCmKBGCyQP0PbR6k=",
+        "lastModified": 1785119878,
+        "narHash": "sha256-6etolbkaceReOAWuEy/Rhjtop4v3bk3C+GeD6Gt19Ss=",
         "owner": "imtraf02",
         "repo": "gnil",
-        "rev": "47814aae98d9586833933622a9c630b447b55962",
+        "rev": "b6e30a1ed5cf4ea198d19c7a1b86174fd947834c",
         "type": "github"
       },
       "original": {
         "owner": "imtraf02",
         "repo": "gnil",
+        "type": "github"
+      }
+    },
+    "gnil-fm": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1785119859,
+        "narHash": "sha256-AZmdKNwKy0aHW5krsbA7DP2tgIsRiUReThud1WEWnwc=",
+        "owner": "imtraf02",
+        "repo": "gnil-fm",
+        "rev": "b9e582e9eba185e005f8d98b6118b76a37758db0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "imtraf02",
+        "repo": "gnil-fm",
         "type": "github"
       }
     },
@@ -248,6 +268,7 @@
         "codex-cli-nix": "codex-cli-nix",
         "fcitx5-lotus": "fcitx5-lotus",
         "gnil": "gnil",
+        "gnil-fm": "gnil-fm",
         "home-manager": "home-manager",
         "ling-sddm": "ling-sddm",
         "nixpkgs": "nixpkgs_2",

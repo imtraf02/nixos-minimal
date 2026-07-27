@@ -15,6 +15,7 @@
     ./zed
     ./ghostty
     ./obs-studio
+    inputs.gnil-fm.homeManagerModules.default
   ];
 
   home = {
@@ -37,6 +38,11 @@
   ];
 
   programs.home-manager.enable = true;
+
+  programs.gnil-fm = {
+    enable = true;
+    defaultFileManager = true;
+  };
 
   gtk = {
     enable = true;

@@ -43,14 +43,16 @@ in {
     mpv # Video player
     imv # Image viewer nhẹ cho Wayland
     spotify # (cần allowUnfree = true)
-    # --- Development tools ---
-    gemini-cli
+
     # --- Misc ---
     xdg-utils
     wl-clipboard
     app2unit
     # --- Media & video editing ---
     davinci-resolve
+
+    nodejs
+    freecad
   ];
 
   xdg.desktopEntries.davinci-resolve = {

@@ -24,7 +24,25 @@
     ../../modules/desktop/fonts.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+
+    overlays = [
+      (_final: prev: {
+        # VTK 9.5.2 still expects GDAL metadata to be mutable, but GDAL 3.13
+        # returns CSLConstList. Let the compiler infer the correct type.
+        vtk = prev.vtk.overrideAttrs (oldAttrs: {
+          postPatch =
+            (oldAttrs.postPatch or "")
+            + ''
+              substituteInPlace IO/GDAL/vtkGDALRasterReader.cxx \
+                --replace-fail "char** papszMetaData = GDALGetMetadata" "auto papszMetaData = GDALGetMetadata" \
+                --replace-fail "char** papszMetadata = GDALGetMetadata" "auto papszMetadata = GDALGetMetadata"
+            '';
+        });
+      })
+    ];
+  };
 
   networking.hostName = "nixos-laptop";
 
