@@ -177,11 +177,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785295690,
-        "narHash": "sha256-hlNWA/qexyO21FCC00FHQR9Yms3+d53aupwJEZPdj+w=",
+        "lastModified": 1785382535,
+        "narHash": "sha256-P+nKFo05l1LkabRPHG0Z2N8cM8C98zbnUBXMPH5N9iY=",
         "owner": "imtraf02",
         "repo": "gnil-fm",
-        "rev": "e84b6af74e95a826736ecf49117baebb9461ee1a",
+        "rev": "585a9a3971100aba28ba62a78dd732c9114aa309",
         "type": "github"
       },
       "original": {

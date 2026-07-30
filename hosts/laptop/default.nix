@@ -22,7 +22,14 @@
     ../../modules/desktop/niri.nix
     ../../modules/desktop/audio.nix
     ../../modules/desktop/fonts.nix
+
+    inputs.gnil-fm.nixosModules.default
   ];
+
+  programs.gnil-fm = {
+    enable = true;
+    portal.enable = true;
+  };
 
   nixpkgs = {
     config.allowUnfree = true;

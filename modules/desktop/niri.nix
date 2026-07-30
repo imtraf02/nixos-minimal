@@ -2,7 +2,7 @@
   programs = {
     niri = {
       enable = true;
-      useNautilus = true;
+      useNautilus = false;
     };
     xwayland.enable = true;
     dconf.enable = true;

@@ -29,6 +29,7 @@
     TERMINAL = "ghostty";
     TERM = "ghostty";
     BROWSER = "zen-beta";
+    GTK_USE_PORTAL = "1";
     NPM_CONFIG_PREFIX = "$HOME/.npm-global";
     XDG_DATA_HOME = "$HOME/.local/share";
   };
@@ -45,11 +46,35 @@
     portal.enable = true;
   };
 
-  xdg.mimeApps.associations.added = {
-    "x-scheme-handler/tg" = ["org.telegram.desktop.desktop"];
-    "x-scheme-handler/tonsite" = ["org.telegram.desktop.desktop"];
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "inode/directory" = ["gnil-fm.desktop"];
+      "x-scheme-handler/file" = ["gnil-fm.desktop"];
+    };
+    associations.added = {
+      "inode/directory" = ["gnil-fm.desktop"];
+      "x-scheme-handler/file" = ["gnil-fm.desktop"];
+      "x-scheme-handler/tg" = ["org.telegram.desktop.desktop"];
+      "x-scheme-handler/tonsite" = ["org.telegram.desktop.desktop"];
+    };
   };
   xdg.configFile."mimeapps.list".force = true;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [inputs.gnil-fm.packages.${pkgs.stdenv.hostPlatform.system}.default];
+    config = {
+      common = {
+        default = ["gtk"];
+        "org.freedesktop.impl.portal.FileChooser" = ["gnilfm" "gtk"];
+      };
+      niri = {
+        default = ["gtk"];
+        "org.freedesktop.impl.portal.FileChooser" = ["gnilfm" "gtk"];
+      };
+    };
+  };
 
   gtk = {
     enable = true;

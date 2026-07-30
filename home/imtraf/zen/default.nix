@@ -11,9 +11,8 @@
     setAsDefaultBrowser = true;
 
     profiles.default.settings = {
-      browser = {
-        tabs.allow_transparent_browser = true;
-      };
+      "browser.tabs.allow_transparent_browser" = true;
+      "widget.use-xdg-desktop-portal.file-picker" = 1;
     };
   };
 }
