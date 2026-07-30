@@ -42,7 +42,14 @@
   programs.gnil-fm = {
     enable = true;
     defaultFileManager = true;
+    portal.enable = true;
   };
+
+  xdg.mimeApps.associations.added = {
+    "x-scheme-handler/tg" = ["org.telegram.desktop.desktop"];
+    "x-scheme-handler/tonsite" = ["org.telegram.desktop.desktop"];
+  };
+  xdg.configFile."mimeapps.list".force = true;
 
   gtk = {
     enable = true;
