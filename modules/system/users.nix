@@ -19,6 +19,7 @@
       "input"
       "bluetooth"
       "storage"
+      "i2c"
     ];
   };
 

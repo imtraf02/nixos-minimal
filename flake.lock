@@ -150,26 +150,6 @@
         "type": "github"
       }
     },
-    "gnil": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1785119878,
-        "narHash": "sha256-6etolbkaceReOAWuEy/Rhjtop4v3bk3C+GeD6Gt19Ss=",
-        "owner": "imtraf02",
-        "repo": "gnil",
-        "rev": "b6e30a1ed5cf4ea198d19c7a1b86174fd947834c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "imtraf02",
-        "repo": "gnil",
-        "type": "github"
-      }
-    },
     "gnil-fm": {
       "inputs": {
         "nixpkgs": [
@@ -177,11 +157,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785382535,
-        "narHash": "sha256-P+nKFo05l1LkabRPHG0Z2N8cM8C98zbnUBXMPH5N9iY=",
+        "lastModified": 1785397100,
+        "narHash": "sha256-c47IIRxsinUvziNgC76yfUWDe2DuYLjSagDJrZo82O0=",
         "owner": "imtraf02",
         "repo": "gnil-fm",
-        "rev": "585a9a3971100aba28ba62a78dd732c9114aa309",
+        "rev": "86f700f769c82b46dd48b9215a64c5f397f2521c",
         "type": "github"
       },
       "original": {
@@ -217,16 +197,36 @@
         ]
       },
       "locked": {
-        "lastModified": 1782569265,
-        "narHash": "sha256-JyvJxbToQAAWCNgcVGkd492KajpafOWFVeZJB5Hh4G4=",
+        "lastModified": 1786597568,
+        "narHash": "sha256-4Nk6uJB+y2kt9W3zlgOg0jRRBBf/S/Ib771Xy/JBa5g=",
         "owner": "imtraf02",
         "repo": "ling-sddm",
-        "rev": "0afc543ca80f723a90351b68f1e7bc197ba8b494",
+        "rev": "2e0e9e2859c7812a958a275b411497385d3c1e0e",
         "type": "github"
       },
       "original": {
         "owner": "imtraf02",
         "repo": "ling-sddm",
+        "type": "github"
+      }
+    },
+    "ling-shell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786599783,
+        "narHash": "sha256-xUjNMCwsiMX98K0E+UP4i3aRWEsfcqi7iAXoe9HLF+I=",
+        "owner": "imtraf02",
+        "repo": "ling-shell",
+        "rev": "e4829ac67bce115df92320c5ad25cb622c30fdc8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "imtraf02",
+        "repo": "ling-shell",
         "type": "github"
       }
     },
@@ -267,10 +267,10 @@
         "antigravity-nix": "antigravity-nix",
         "codex-cli-nix": "codex-cli-nix",
         "fcitx5-lotus": "fcitx5-lotus",
-        "gnil": "gnil",
         "gnil-fm": "gnil-fm",
         "home-manager": "home-manager",
         "ling-sddm": "ling-sddm",
+        "ling-shell": "ling-shell",
         "nixpkgs": "nixpkgs_2",
         "zen-browser": "zen-browser"
       }

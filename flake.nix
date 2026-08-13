@@ -9,8 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    gnil = {
-      url = "github:imtraf02/gnil";
+    ling-shell = {
+      url = "github:imtraf02/ling-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -48,12 +48,7 @@
             '';
         });
 
-        # FreeCAD now expands CMAKE_INSTALL_BINDIR in its thumbnailer file.
-        # The nixpkgs hook still looks for the old unexpanded command.
-        freecad = prev.freecad.overrideAttrs (_oldAttrs: {
-          postInstall = "";
-        });
-      })
+        })
     ];
   };
 

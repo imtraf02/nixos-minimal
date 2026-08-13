@@ -52,7 +52,7 @@ in {
     davinci-resolve
 
     nodejs
-    freecad
+    slack
   ];
 
   xdg.desktopEntries.davinci-resolve = {

@@ -1,0 +1,14 @@
+{
+    "rxPeaks": [
+        {
+            "speed": 80666,
+            "timestamp": 1786598424948
+        }
+    ],
+    "txPeaks": [
+        {
+            "speed": 123666,
+            "timestamp": 1786598424948
+        }
+    ]
+}

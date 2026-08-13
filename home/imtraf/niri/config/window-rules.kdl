@@ -9,6 +9,13 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"^com\.mitchellh\.ghostty$"#
+    default-column-width {
+        proportion 0.5
+    }
+}
+
+window-rule {
     match app-id=r#"^(zen-beta|dev\.zed\.Zed|code)$"#
     default-column-width {
         proportion 1.0
@@ -22,6 +29,7 @@ window-rule {
 }
 
 layer-rule {
-    match namespace="^gnil-backdrop$"
+    // Ling Shell's overview layer belongs in niri's overview backdrop.
+    match namespace=r#"^quickshell:overview-.*$"#
     place-within-backdrop true
 }

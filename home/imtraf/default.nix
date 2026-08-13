@@ -10,11 +10,11 @@
     ./shell.nix
     ./git.nix
     ./niri
-    ./gnil
     ./zen
     ./zed
     ./ghostty
     ./obs-studio
+    inputs.ling-shell.homeModules.default
     inputs.gnil-fm.homeManagerModules.default
   ];
 
@@ -39,6 +39,28 @@
   ];
 
   programs.home-manager.enable = true;
+
+  programs.ling-shell = {
+    enable = true;
+    systemd.enable = true;
+    extraRuntimePackages = with pkgs; [
+      ddcutil
+      mpvpaper
+    ];
+    package =
+      inputs.ling-shell.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs
+      (oldAttrs: {
+        # Keep stale local build artifacts out of the upstream source archive.
+        src = lib.cleanSourceWith {
+          src = oldAttrs.src;
+          filter = path: _type:
+            !(builtins.elem (builtins.baseNameOf path) [
+              "result"
+              "undefinednetwork_stats.json"
+            ]);
+        };
+      });
+  };
 
   programs.gnil-fm = {
     enable = true;

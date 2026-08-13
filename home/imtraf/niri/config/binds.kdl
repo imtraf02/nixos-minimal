@@ -6,20 +6,18 @@ binds {
     Mod+W hotkey-overlay-title="Open a web browser" { spawn "app2unit" "--" "zen-beta"; }
     Mod+E hotkey-overlay-title="Open a file manager" { spawn "app2unit" "--" "gnil-fm"; }
 
-    // Core Gnil binds
-    Mod+Space { spawn-sh "gnil msg panel toggle launcher"; }
-    Mod+S { spawn-sh "gnil msg panel toggle session"; }
-    Mod+D { spawn-sh "gnil msg panel toggle dashboard"; }
-    Mod+Apostrophe { spawn-sh "gnil msg panel toggle settings"; }
-    Mod+B { spawn-sh "gnil msg bar-toggle"; }
-    Mod+Alt+L { spawn-sh "gnil msg session lock"; }
+    // Ling Shell IPC
+    Mod+Space { spawn "ling-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+S { spawn "ling-shell" "ipc" "call" "session" "toggle"; }
+    Mod+B { spawn "ling-shell" "ipc" "call" "bar" "toggle"; }
+    Mod+Alt+L { spawn "ling-shell" "ipc" "call" "lock" "lock"; }
 
     // Audio & Brightness
-    XF86AudioRaiseVolume { spawn-sh "gnil msg volume-up"; }
-    XF86AudioLowerVolume { spawn-sh "gnil msg volume-down"; }
-    XF86AudioMute { spawn-sh "gnil msg volume-mute"; }
-    XF86MonBrightnessUp { spawn-sh "gnil msg brightness-up"; }
-    XF86MonBrightnessDown { spawn-sh "gnil msg brightness-down"; }
+    XF86AudioRaiseVolume { spawn "ling-shell" "ipc" "call" "audio" "volume" "increase"; }
+    XF86AudioLowerVolume { spawn "ling-shell" "ipc" "call" "audio" "volume" "decrease"; }
+    XF86AudioMute { spawn "ling-shell" "ipc" "call" "audio" "volume" "mute"; }
+    XF86MonBrightnessUp { spawn "ling-shell" "ipc" "call" "brightness" "increase"; }
+    XF86MonBrightnessDown { spawn "ling-shell" "ipc" "call" "brightness" "decrease"; }
 
     Mod+O repeat=false { toggle-overview; }
 

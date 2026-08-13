@@ -6,6 +6,7 @@
 }: {
   hardware = {
     enableRedistributableFirmware = true;
+    i2c.enable = true;
 
     cpu.intel.updateMicrocode = true;
 
