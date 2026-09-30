@@ -52,7 +52,7 @@ in {
     davinci-resolve
 
     nodejs
-    slack
+    # chatgpt
   ];
 
   xdg.desktopEntries.davinci-resolve = {

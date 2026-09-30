@@ -83,21 +83,6 @@
   };
   xdg.configFile."mimeapps.list".force = true;
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [inputs.gnil-fm.packages.${pkgs.stdenv.hostPlatform.system}.default];
-    config = {
-      common = {
-        default = ["gtk"];
-        "org.freedesktop.impl.portal.FileChooser" = ["gnilfm" "gtk"];
-      };
-      niri = {
-        default = ["gtk"];
-        "org.freedesktop.impl.portal.FileChooser" = ["gnilfm" "gtk"];
-      };
-    };
-  };
-
   gtk = {
     enable = true;
     theme = {
